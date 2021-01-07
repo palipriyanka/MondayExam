@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\spali\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\spali\\.nuget\\packages"
+    ]
+  }
+}

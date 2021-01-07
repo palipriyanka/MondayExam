@@ -1,0 +1,23 @@
+﻿@model  IEnumerable<PracticeMvc.Models.Employee1>
+
+@{ 
+    ViewData["Title"] = "Default";
+}
+
+
+
+
+<div class="card card-body bg-success text-white">
+    This is from Component page
+    <table class="table table-bordered table-hover">
+        <tr><th>id</th><th>Name</th><th>salary</th></tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.salary</td>
+            </tr>
+        }
+    </table>
+</div>

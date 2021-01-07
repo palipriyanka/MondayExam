@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PracticeMvc.Models.Views.GoodsPurchaseViews>
+
+@{
+    ViewData["Title"] = "RawQueryComplex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>RawQueryComplex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseLoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseDelivery)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseLoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseDelivery)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

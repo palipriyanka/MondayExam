@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "ComponentTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ComponentTest</h1>
+<div class="card card-body">
+    <h1>Hello this is from view page</h1>
+</div>
+<br />
+@await Component.InvokeAsync("Employee");
+

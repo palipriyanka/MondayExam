@@ -1,0 +1,55 @@
+﻿@using PracticeMvc.Models
+@model IEnumerable<Employee1>
+
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Search</h1>
+<div class="card card-body">
+    <form asp-action="Search" class="form-inline">
+        <div class="form-group">
+            <label class="control-label">FeildName &nbsp;&nbps;</label>
+            <select name="FeildName" class="form-control">
+                <option value="id">id</option>
+                <option value="name">name</option>
+                <option value="salary">salary</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label">&nbsp;&nbsp;keyword&nbsp;&nbsp;</label>
+            <input type="text" placeholder="keyword" name="keyword" id="keyword" required class="form-control" />
+        </div>
+        <div class="form-group">
+            &nbsp;&nbsp;<input type="submit" value="Search" class="btn btn-dark" />
+
+        </div>
+    </form>
+</div>
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>salary</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.salary</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

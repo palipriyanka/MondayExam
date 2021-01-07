@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "TagHelper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>TagHelper</h1>
+@("The result of multiplication is:"+new PracticeMvc.Utility.Utility().Multiply(2,3,4,5,6))
+<hr />
+@("The result od sum is:"+ PracticeMvc.Utility.Utility.Sum(2,3,4,5))
+<hr />
+@{ PrintTable(10);}
+<hr />
+the sum of 2,4 is <strong>@Sum(2,4)</strong>.
+@{ 
+    void PrintTable(int number)
+    {
+        <ul>
+            @for(var i = 1; i < 11; i++)
+            {
+                <li>@(number*i)</li>
+            }
+        </ul>
+    }
+}
+
+@functions
+{
+    public int Sum(int a,int b)
+    {
+        return a + b;
+    }
+}
